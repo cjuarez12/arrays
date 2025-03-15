@@ -1,0 +1,62 @@
+import java.util.Arrays;
+
+public class ArrayExample {
+    public static void main(String[] args) {
+        // Declaración e inicialización de un array de enteros
+        int[] numeros = {10, 20, 30, 40, 50};
+
+        // Imprimir el array original
+        System.out.println("Array original: " + Arrays.toString(numeros));
+
+        // Buscar un elemento en el array
+        int buscado = 30;
+        boolean encontrado = false;
+        for (int num : numeros) {
+            if (num == buscado) {
+                encontrado = true;
+                break;
+            }
+        }
+        System.out.println("¿El número " + buscado + " está en el array? " + encontrado);
+
+
+
+
+        int posicion = -1; // Se inicializa en -1 para indicar que no se encontró
+
+        // Búsqueda del número en el array
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] == buscado) {
+                posicion = i; // Se guarda la posición cuando se encuentra
+                break; // Termina el bucle al encontrar el número
+            }
+        }
+
+        // Mostrar el resultado
+        if (posicion != -1) {
+            System.out.println("El número " + buscado + " está en la posición: " + posicion);
+        } else {
+            System.out.println("El número " + buscado + " no está en el array.");
+        }
+
+
+
+        // Agregar un elemento (requiere crear un nuevo array)
+        int nuevoValor = 60;
+        numeros = Arrays.copyOf(numeros, numeros.length + 1);
+        numeros[numeros.length - 1] = nuevoValor;
+        System.out.println("Array después de agregar " + nuevoValor + ": " + Arrays.toString(numeros));
+
+        // Eliminar un elemento (requiere un nuevo array)
+        int eliminar = 30;
+        int[] nuevoArray = new int[numeros.length - 1];
+        int index = 0;
+        for (int num : numeros) {
+            if (num != eliminar) {
+                nuevoArray[index++] = num;
+            }
+        }
+        numeros = nuevoArray;
+        System.out.println("Array después de eliminar " + eliminar + ": " + Arrays.toString(numeros));
+    }
+}
