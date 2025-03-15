@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+        // Creación de un ArrayList
+        ArrayList<String> nombres = new ArrayList<>();
+
+        // Agregar elementos
+        nombres.add("Ana");
+        nombres.add("Carlos");
+        nombres.add("Beatriz");
+        nombres.add("David");
+
+        System.out.println("Lista inicial: " + nombres);
+
+        // Insertar en una posición específica
+        nombres.add(2, "Elena"); // Agrega en la posición 2
+        System.out.println("Después de insertar 'Elena' en posición 2: " + nombres);
+
+        // Eliminar un elemento por índice
+        nombres.remove(1);
+        System.out.println("Después de eliminar el elemento en índice 1: " + nombres);
+
+        // Eliminar un elemento por valor
+        nombres.remove("David");
+        System.out.println("Después de eliminar 'David': " + nombres);
+
+        // Buscar un elemento
+        String buscar = "Elena";
+        boolean existe = nombres.contains(buscar);
+        System.out.println("¿La lista contiene a '" + buscar + "'? " + existe);
+
+        // Obtener un elemento por índice
+        System.out.println("Elemento en la posición 2: " + nombres.get(2));
+
+        // Recorrer la lista con un for-each
+        System.out.println("Elementos en la lista:");
+        for (String nombre : nombres) {
+            System.out.println("- " + nombre);
+        }
+    }
+}
